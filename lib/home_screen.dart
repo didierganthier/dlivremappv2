@@ -1,3 +1,5 @@
+import 'package:dlivremappv2/cart_screen.dart';
+import 'package:dlivremappv2/restaurant_detail.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,7 +16,8 @@ class HomeScreen extends StatelessWidget {
     {
       "id": 1,
       "name": "Pizza Palace",
-      "image": "http://www.pagespro.ht/resources/cms_local/multi_upload/pubs_succursales/LA-VILLA-2019_1553441473.jpg",
+      "image":
+          "http://www.pagespro.ht/resources/cms_local/multi_upload/pubs_succursales/LA-VILLA-2019_1553441473.jpg",
       "rating": 4.5,
       "deliveryTime": "25-30 min",
       "deliveryFee": "\$2.99",
@@ -25,7 +28,8 @@ class HomeScreen extends StatelessWidget {
     {
       "id": 2,
       "name": "Burger House",
-      "image": "http://www.pagespro.ht/resources/cms_local/multi_upload/pubs_succursales/LA-VILLA-2019_1553441473.jpg",
+      "image":
+          "http://www.pagespro.ht/resources/cms_local/multi_upload/pubs_succursales/LA-VILLA-2019_1553441473.jpg",
       "rating": 4.3,
       "deliveryTime": "20-25 min",
       "deliveryFee": "\$1.99",
@@ -36,7 +40,8 @@ class HomeScreen extends StatelessWidget {
     {
       "id": 3,
       "name": "Sushi Express",
-      "image": "http://www.pagespro.ht/resources/cms_local/multi_upload/pubs_succursales/LA-VILLA-2019_1553441473.jpg",
+      "image":
+          "http://www.pagespro.ht/resources/cms_local/multi_upload/pubs_succursales/LA-VILLA-2019_1553441473.jpg",
       "rating": 4.7,
       "deliveryTime": "30-35 min",
       "deliveryFee": "\$3.99",
@@ -47,7 +52,8 @@ class HomeScreen extends StatelessWidget {
     {
       "id": 4,
       "name": "Healthy Bowls",
-      "image": "http://www.pagespro.ht/resources/cms_local/multi_upload/pubs_succursales/LA-VILLA-2019_1553441473.jpg",
+      "image":
+          "http://www.pagespro.ht/resources/cms_local/multi_upload/pubs_succursales/LA-VILLA-2019_1553441473.jpg",
       "rating": 4.6,
       "deliveryTime": "25-30 min",
       "deliveryFee": "Free",
@@ -81,18 +87,28 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(Icons.location_on, color: Colors.white, size: 20),
+                          Icon(
+                            Icons.location_on,
+                            color: Colors.white,
+                            size: 20,
+                          ),
                           SizedBox(width: 8),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 "Deliver to",
-                                style: TextStyle(color: Colors.white70, fontSize: 12),
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 12,
+                                ),
                               ),
                               Text(
                                 "Home - 123 Main St",
-                                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ],
                           ),
@@ -107,8 +123,18 @@ class HomeScreen extends StatelessWidget {
                           Stack(
                             children: [
                               IconButton(
-                                icon: Icon(Icons.shopping_cart, color: Colors.white),
-                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.shopping_cart,
+                                  color: Colors.white,
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => CartScreen(),
+                                    ),
+                                  );
+                                },
                               ),
                               Positioned(
                                 right: 0,
@@ -119,10 +145,16 @@ class HomeScreen extends StatelessWidget {
                                     color: Colors.orange[500],
                                     shape: BoxShape.circle,
                                   ),
-                                  constraints: BoxConstraints(minWidth: 16, minHeight: 16),
+                                  constraints: BoxConstraints(
+                                    minWidth: 16,
+                                    minHeight: 16,
+                                  ),
                                   child: Text(
                                     "2",
-                                    style: TextStyle(color: Colors.white, fontSize: 10),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 10,
+                                    ),
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
@@ -179,13 +211,21 @@ class HomeScreen extends StatelessWidget {
                               color: action["color"],
                               shape: BoxShape.circle,
                             ),
-                            child: Center(child: Text(action["icon"], style: TextStyle(fontSize: 20))),
+                            child: Center(
+                              child: Text(
+                                action["icon"],
+                                style: TextStyle(fontSize: 20),
+                              ),
+                            ),
                           ),
                           SizedBox(height: 8),
                           Text(
                             action["name"],
                             textAlign: TextAlign.center,
-                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ],
                       ),
@@ -227,13 +267,21 @@ class HomeScreen extends StatelessWidget {
                                   color: category["color"],
                                   shape: BoxShape.circle,
                                 ),
-                                child: Center(child: Text(category["icon"], style: TextStyle(fontSize: 24))),
+                                child: Center(
+                                  child: Text(
+                                    category["icon"],
+                                    style: TextStyle(fontSize: 24),
+                                  ),
+                                ),
                               ),
                               SizedBox(height: 8),
                               Text(
                                 category["name"],
                                 textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ],
                           ),
@@ -256,11 +304,17 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       Text(
                         "Featured Restaurants",
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       TextButton(
                         onPressed: () {},
-                        child: Text("See all", style: TextStyle(color: Colors.teal[600])),
+                        child: Text(
+                          "See all",
+                          style: TextStyle(color: Colors.teal[600]),
+                        ),
                       ),
                     ],
                   ),
@@ -274,7 +328,14 @@ class HomeScreen extends StatelessWidget {
                       return Card(
                         elevation: 0,
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => RestaurantDetail(),
+                              ),
+                            );
+                          },
                           child: Column(
                             children: [
                               Stack(
@@ -287,18 +348,27 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   if (restaurant["promoted"])
                                     Container(
-                                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 8,
+                                        vertical: 4,
+                                      ),
                                       color: Colors.orange[500],
                                       child: Text(
                                         "Promoted",
-                                        style: TextStyle(color: Colors.white, fontSize: 12),
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 12,
+                                        ),
                                       ),
                                     ),
                                   Positioned(
                                     top: 8,
                                     right: 8,
                                     child: IconButton(
-                                      icon: Icon(Icons.favorite, color: Colors.grey[400]),
+                                      icon: Icon(
+                                        Icons.favorite,
+                                        color: Colors.grey[400],
+                                      ),
                                       onPressed: () {},
                                     ),
                                   ),
@@ -310,28 +380,43 @@ class HomeScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               restaurant["name"],
-                                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                             ),
                                             Text(
                                               restaurant["category"],
-                                              style: TextStyle(color: Colors.grey[600], fontSize: 12),
+                                              style: TextStyle(
+                                                color: Colors.grey[600],
+                                                fontSize: 12,
+                                              ),
                                             ),
                                           ],
                                         ),
                                         Row(
                                           children: [
-                                            Icon(Icons.star, color: Colors.yellow[700], size: 16),
+                                            Icon(
+                                              Icons.star,
+                                              color: Colors.yellow[700],
+                                              size: 16,
+                                            ),
                                             SizedBox(width: 4),
                                             Text(
                                               "${restaurant["rating"]}",
-                                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                                              style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                             ),
                                           ],
                                         ),
@@ -339,28 +424,40 @@ class HomeScreen extends StatelessWidget {
                                     ),
                                     SizedBox(height: 8),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Row(
                                           children: [
-                                            Text("${restaurant["deliveryTime"]}  "),
+                                            Text(
+                                              "${restaurant["deliveryTime"]}  ",
+                                            ),
                                             Text("${restaurant["distance"]}"),
                                           ],
                                         ),
                                         Container(
-                                          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                          padding: EdgeInsets.symmetric(
+                                            horizontal: 8,
+                                            vertical: 4,
+                                          ),
                                           decoration: BoxDecoration(
-                                            color: restaurant["deliveryFee"] == "Free"
+                                            color:
+                                                restaurant["deliveryFee"] ==
+                                                    "Free"
                                                 ? Colors.teal[500]
                                                 : Colors.grey[200],
-                                            borderRadius: BorderRadius.circular(12),
+                                            borderRadius: BorderRadius.circular(
+                                              12,
+                                            ),
                                           ),
                                           child: Text(
                                             restaurant["deliveryFee"] == "Free"
                                                 ? "Free delivery"
                                                 : restaurant["deliveryFee"],
                                             style: TextStyle(
-                                              color: restaurant["deliveryFee"] == "Free"
+                                              color:
+                                                  restaurant["deliveryFee"] ==
+                                                      "Free"
                                                   ? Colors.white
                                                   : Colors.grey[600],
                                               fontSize: 12,
